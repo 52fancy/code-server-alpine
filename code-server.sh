@@ -108,11 +108,11 @@ apk extract --allow-untrusted nodejs*.apk
 cp /tmp/usr/bin/node $INSTALL_DIR/lib/node
 
 PASSWD="Admin$RANDOM"
-echo "bind-addr: [::]:8080" >>"$INSTALL_DIR"/config.yaml
+echo "bind-addr: '[::]:8080'" >>"$INSTALL_DIR"/config.yaml
 echo "auth: password" >>"$INSTALL_DIR"/config.yaml
 echo "password: "$PASSWD"" >>"$INSTALL_DIR"/config.yaml 
-echo "user-data-dir: $INSTALL_DIR" >>"$INSTALL_DIR"/config.yaml
-echo "extensions-dir: $INSTALL_DIR" >>"$INSTALL_DIR"/config.yaml
+echo "user-data-dir: $INSTALL_DIR/User" >>"$INSTALL_DIR"/config.yaml
+echo "extensions-dir: $INSTALL_DIR/extensions" >>"$INSTALL_DIR"/config.yaml
 echo "session-socket: $INSTALL_DIR/code-server-ipc.sock" >>"$INSTALL_DIR"/config.yaml
 
 echo ""
